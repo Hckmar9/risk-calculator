@@ -1,0 +1,123 @@
+/* custom.css */
+
+:root {
+  --color-primary: #007bff;
+  --color-primary-dark: #0056b3;
+  --color-secondary: #219ebc;
+  --color-secondary-light: #48cae4;
+  --color-danger: #ef233c;
+  --color-danger-dark: #c1121f;
+  --color-background: #f8f9fa;
+  --color-text: #333;
+  --color-white: #ffffff;
+  --shadow-default: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Utility classes */
+.rounded {
+  border-radius: 8px;
+}
+
+.shadow {
+  box-shadow: var(--shadow-default);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  background-color: var(--color-white);
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+h1,
+h2 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.btn {
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.table {
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary-dark);
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.card {
+  border: none;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-bottom: none;
+}
+
+.risk-matrix td {
+  height: 80px;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.risk-matrix-high {
+  background-color: rgba(255, 99, 132, 0.6);
+}
+.risk-matrix-medium {
+  background-color: rgba(255, 206, 86, 0.6);
+}
+.risk-matrix-low {
+  background-color: rgba(75, 192, 192, 0.6);
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 300px;
+  width: 100%;
+}
+
+.chart-colors-high {
+  background-color: rgba(255, 99, 132, 0.8);
+  border-color: rgba(255, 99, 132, 1);
+}
+
+.chart-colors-medium {
+  background-color: rgba(255, 206, 86, 0.8);
+  border-color: rgba(255, 206, 86, 1);
+}
+
+.chart-colors-low {
+  background-color: rgba(75, 192, 192, 0.8);
+  border-color: rgba(75, 192, 192, 1);
+}

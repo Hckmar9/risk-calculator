@@ -1,0 +1,16 @@
+# Hidden folders
+.DS_Store
+instance/
+
+# Virtual environment
+env/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+
+# Cache files
+*.cache
+__pycache__/
