@@ -18,7 +18,7 @@ init_routes(app)
 def download_excel():
     risks = Risk.query.all()
     excel_file = generate_excel(risks)
-    current_datetime = datetime.now().strftime("%Y%m%d")
+    current_datetime = datetime.now().strftime("%Y%m%d") #so that the file is not overwritten
     filename = f'risks-file_{current_datetime}.xlsx'
     return send_file(excel_file, 
                         download_name=filename,

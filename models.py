@@ -1,3 +1,4 @@
+# note for me, to add comments so it can be easier for Sphinx to document this
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
