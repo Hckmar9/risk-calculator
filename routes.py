@@ -32,7 +32,8 @@ def prepare_dashboard_data(risks):
     return {
         'priority_chart_data': prepare_priority_chart_data(prioritized_risks[:5]),
         'category_chart_data': prepare_category_chart_data(risks),
-        'risk_matrix_data': prepare_risk_matrix_data(risks)
+        'risk_matrix_data': prepare_risk_matrix_data(risks),
+        'status_chart_data': prepare_status_chart_data(risks)
     }
 
 def categorize_risks(risks):
@@ -70,5 +71,31 @@ def prepare_category_chart_data(risks):
         'datasets': [{
             'label': 'Number of Risks',
             'data': [len(categorized['High']), len(categorized['Medium']), len(categorized['Low'])]
+        }]
+    }
+
+def prepare_status_chart_data(risks):
+    status_counts = {
+        'Open': len([r for r in risks if r.status == 'Open']),
+        'Mitigating': len([r for r in risks if r.status == 'Mitigating']),
+        'Closed': len([r for r in risks if r.status == 'Closed'])
+    }
+    return {
+        # check this later, it seems setting the colors on the custom.css are not working but directly here are. Not the best idea add them here, tho. 
+        'labels': list(status_counts.keys()),
+        'datasets': [{
+            'label': 'Number of Risks',
+            'data': list(status_counts.values()),
+            'backgroundColor': [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(75, 192, 192, 0.6)'
+            ],
+            'borderColor': [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            'borderWidth': 1
         }]
     }

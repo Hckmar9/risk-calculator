@@ -11,6 +11,10 @@ function updateDashboard() {
   categoryChart.data = dashboardData.category_chart_data;
   categoryChart.update();
 
+  // Status chart section
+  statusChart.data = dashboardData.status_chart_data;
+  statusChart.update();
+
   // Risk Matrix section
   populateRiskMatrix(dashboardData.risk_matrix_data);
 }
@@ -62,6 +66,26 @@ function initCategoryChart() {
   });
 }
 
+function initStatusChart() {
+  const statusCtx = document.getElementById("statusChart").getContext("2d");
+  statusChart = new Chart(statusCtx, {
+    type: "pie",
+    data: {},
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+        },
+        title: {
+          display: true,
+          text: "Risk Status Distribution",
+        },
+      },
+    },
+  });
+}
+
 function populateRiskMatrix(data) {
   const matrix = document.querySelector(".risk-matrix tbody");
   matrix.innerHTML = "";
@@ -84,5 +108,6 @@ function populateRiskMatrix(data) {
 document.addEventListener("DOMContentLoaded", () => {
   initPriorityChart();
   initCategoryChart();
+  initStatusChart();
   updateDashboard();
 });
