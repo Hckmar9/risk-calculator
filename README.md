@@ -14,7 +14,7 @@ A Flask-based web application for managing and visualizing project risks. 🚀
 1. Clone the repository:
 
    ```
-   git clone https://github.com/Hckmar9/risk-management-dashboard.git
+   git clone https://github.com/Hckmar9/risk-calculator.git
    cd risk-calculator
    ```
 
